@@ -21,9 +21,9 @@ include_directories(video)
 include_directories(bat)
 
 # name of executable file and path of source file
-add_executable(main main.cc face/face_api.cc 
+add_executable(main main.cpp face/face_api.cpp
                serial/src/serialport.cpp serial/src/CRC_Check.cpp
-               video/RMVideoCapture.cpp bat/bat.cc)
+               video/RMVideoCapture.cpp bat/bat.cpp)
 # opencv libraries
 target_link_libraries(main  ${OpenCV_LIBS})
 target_link_libraries(main -lpthread -lm)
