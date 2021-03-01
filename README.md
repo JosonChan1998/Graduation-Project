@@ -25,4 +25,7 @@ pwd # ~/grad_project/build
 ## Tune Parammter
 You can see all parameter in `config.hpp`.While you turnning it, you need to rebuild the project.
 
+## Reference
+
+[https://github.com/Star-Clouds/centerface](https://github.com/Star-Clouds/centerface)
 
