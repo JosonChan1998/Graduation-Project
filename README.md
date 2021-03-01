@@ -23,6 +23,6 @@ pwd # ~/grad_project/build
 ./main
 ```
 ## Tune Parammter
-You can see all parameter in `config.hpp`.While you turned it, you need to rebuild the project.
+You can see all parameter in `config.hpp`.While you turnning it, you need to rebuild the project.
 
 
