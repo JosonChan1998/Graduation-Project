@@ -16,7 +16,7 @@ public:
         buffer_size = 3;
         camera_w = 640;
         camera_h = 480;
-        exposure = 120;
+        exposure = 100;
         centerface_path = "../checkpoints/centerface.onnx";
         model_w = 320;
         model_h = 240;

@@ -1,5 +1,5 @@
 # project name
-PROJECT(face_detection)
+PROJECT(graduation_project)
 cmake_minimum_required(VERSION 3.5)
 
 # set the compiler option
