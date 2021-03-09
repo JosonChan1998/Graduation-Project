@@ -5,7 +5,7 @@ CenterFace::CenterFace(std::string model_path,int model_input_w,
     net_ = cv::dnn::readNetFromONNX(model_path);
     if (use_cuda == true) {
         net_.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
-	    net_.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
+		net_.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
     }
 	CorrectSize(model_input_w, model_input_h);
 }

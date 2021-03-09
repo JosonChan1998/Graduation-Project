@@ -57,14 +57,16 @@ int main(int argc, char** argv) {
             port.TransformData(data);
             port.send();
 
-            for (int i = 0; i < face_info.size(); i++) {
-                cv::rectangle(frame, cv::Point(face_info[i].x1, face_info[i].y1), 
-                              cv::Point(face_info[i].x2, face_info[i].y2), 
-                              cv::Scalar(0, 255, 0), 2);
-                for (int j = 0; j < 5; j++) {
-                    cv::circle(frame, cv::Point(face_info[i].landmarks[2*j], 
-                               face_info[i].landmarks[2*j+1]), 2, 
-                               cv::Scalar(255, 255, 0), 1);
+            if (!face_info.empty()) {
+                for (int i = 0; i < 1; i++) {
+                    cv::rectangle(frame, cv::Point(face_info[i].x1, face_info[i].y1), 
+                                cv::Point(face_info[i].x2, face_info[i].y2), 
+                                cv::Scalar(0, 255, 0), 2);
+                    for (int j = 0; j < 5; j++) {
+                        cv::circle(frame, cv::Point(face_info[i].landmarks[2*j], 
+                                face_info[i].landmarks[2*j+1]), 2, 
+                                cv::Scalar(255, 255, 0), 1);
+                    }
                 }
             }
             cv::imshow("image",frame);
