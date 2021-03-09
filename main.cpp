@@ -40,6 +40,9 @@ int main(int argc, char** argv) {
     while (true) {
         cv::Mat frame;
         cap >> frame;
+        if (frame.size().empty()) {
+            continue;
+        }
         if (config.mode == FACE) {
             auto tp1 = std::chrono::steady_clock::now();
             std::vector<FaceInfo> face_info;

@@ -82,15 +82,18 @@ void CenterFace::PostProcess(cv::Mat &heatmap, cv::Mat &scale, cv::Mat &offset,
         x2 = std::min(x1 + scale_w, static_cast<double> (model_input_w_));
         y2 = std::min(y1 + scale_h, static_cast<double> (model_input_h_));
 
+		double box_w = x2 - x1;
+        double box_h = y2 - y1;
+
+		if (box_w * box_h < 400)
+			continue;
+
         FaceInfo facebox;
         facebox.x1 = x1;
         facebox.y1 = y1;
         facebox.x2 = x2;
         facebox.y2 = y2;
         facebox.score = heatmap_ptr[index];
-
-        double box_w = x2 - x1;
-        double box_h = y2 - y1;
 
         for (int j = 0; j < 5; j++) {
             facebox.landmarks[2 * j] = x1 + lm_ptr[(2 * j + 1) * spacial_size + index] * scale_w;
